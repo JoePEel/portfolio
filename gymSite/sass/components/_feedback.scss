@@ -1,0 +1,36 @@
+.feedback {
+    background-color: $colour-primary;
+    width: 100%;
+    height: 20rem;
+    color: white;
+    
+    &__container {
+        margin: 0 auto;
+        margin-top: 4rem;
+        font-size: 1.6rem;
+        max-width: 80rem;
+        
+        ul {
+            list-style: none;
+            text-align: center;
+        }
+    }
+    
+}
+
+
+@media screen and (max-width: 768px) {
+    
+    .feedback {
+        
+        height: 25rem;   
+    }
+}
+
+@media screen and (max-width: 400px) {
+    
+    .feedback {
+        
+        height: 28rem;
+    }
+}

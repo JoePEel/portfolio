@@ -1,0 +1,276 @@
+body {
+    background-color: white;
+}
+
+.photo {
+    transition: all .5s ease;
+}
+
+
+.navbar-brand{
+    padding-left: 3em;
+}
+
+.active {
+    font-weight: 600;
+}
+
+.nav-item, .light {
+    cursor: pointer;
+}
+
+nav {
+    max-width: 2000px;
+    margin: 0 auto;
+    background-color: white;
+}
+
+.photosContainer {
+    width: 100%;
+    max-width: 2000px;
+    margin: 0 auto;
+    margin-top: 4em;
+    
+}
+
+.photo {
+        min-height: 400px;
+}
+
+%photo{
+    width: 100%;
+    position: relative;
+    background-size: cover;
+    background-position: center;
+}
+
+.photo1 {
+    @extend %photo;
+    background-image: url("../img/travel1.jpg");
+}
+
+.photo2 {
+    @extend %photo;
+    background-image: url("../img/travel2.jpg");
+}
+
+.photo3 {
+    @extend %photo;
+    background-image: url("../img/travel3.jpg");
+}
+
+.photo4 {
+    @extend %photo;
+    background-image: url("../img/travel4.jpg");
+}
+
+.photo5 {
+    @extend %photo;
+    background-image: url("../img/travel6.jpg");
+}
+
+.photo6 {
+    @extend %photo;
+    background-image: url("../img/travel10.jpg");
+}
+
+.photo7 {
+    @extend %photo;
+    background-image: url("../img/travel7.jpg");
+}
+
+.photo8 {
+    @extend %photo;
+    background-image: url("../img/travel8.jpg");
+}
+
+.photo9 {
+    @extend %photo;
+    background-image: url("../img/travel9.jpg");
+}
+
+
+
+//Overlays
+@mixin overlayStyles {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 100%;
+    width: 100%;
+}
+
+
+.overlay{
+    @include overlayStyles;
+    background-color: white;
+    opacity: 0;
+    transition: .5s ease;
+&:hover {
+    opacity: 0.25;
+    box-shadow: inset 0px 0px 3px 8px #d5e1e8;
+}
+}
+
+.overlay2{
+    transition: all .5s ease;
+&:hover {
+    box-shadow: 0px 0px 3px 8px grey;
+}
+}
+
+.photoCaption {
+    position: relative;
+    top: 50%;
+    text-align: center;
+    font-weight: 500;
+    font-size: 1.5em;
+    display: none;
+}
+
+
+
+
+//For lightbox
+.screenOverlay {
+ position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background:  rgba(0,0,0,0.8);
+    display: none;
+    z-index: 900;
+}
+
+.lightboxImg {
+    height: 70%;
+    max-width: 90%;
+    margin: 0 auto;
+    margin-top: 5em;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.lightboxText {
+    text-align: center;
+    background-color: black;
+    color: white;
+    width: 50%;
+    margin: 0 auto;
+    margin-top: 1em;
+    border-radius: 4px;
+}
+
+
+//Animations when in view
+.animationElement {
+    margin-top: 300px;
+    opacity: 0;
+}
+
+.animationElement.inView {
+    transition: all .5s linear;
+     margin-top: 0;
+    opacity: 1;
+}
+
+.photo {
+    margin-top: 4em;
+}
+
+
+//Details view 
+
+.photoCaptionDetails {
+    position: static;
+    display: block;
+    margin-bottom: 10em;
+}
+
+.photoCaptionDetails {
+    position: static;
+    display: block;
+    margin-bottom: 10em;
+}
+
+
+.padding1 {
+    padding-left: 15px;
+    padding-right: 15px;
+    background-size: 90% 80%;
+    background-repeat: no-repeat;
+    margin-bottom: 2em;
+}
+
+.padding2 {
+    padding-left: 15px;
+    padding-right: 15px;
+    background-size: 90%;
+    background-repeat: no-repeat;
+}
+
+
+
+//Media Queries
+
+
+
+@media only screen and (min-width: 2000px) {
+    
+    .padding1 {
+        padding: 0px;
+        background-size: 80% 70%;
+        background-repeat: no-repeat;
+    }
+    
+        .padding2 {
+        background-size: 40%;
+}
+    .lightboxImg {
+        max-height: 900px;
+        max-width: 1600px;
+        background-size: 1600px 900px;
+}
+    .nav {
+        width: 2200px;
+    }
+}
+    
+
+@media only screen and (min-width: 1475px) {
+    
+    .padding1 {
+        padding: 0px;
+        background-size: 70% 60%;
+        background-repeat: no-repeat;
+    }
+    .lightboxImg {
+        height: 60%;
+        max-width: 90%;
+    }
+        .padding2 {
+        padding-top: 15px;
+        background-size: 70%;
+}
+}
+
+@media only screen and (max-width: 400px) {
+    .navbar-brand{
+    padding-left: 0em;
+}
+}
+
+//For small phones to show lightbox properly
+@media only screen and (max-height: 400px) {
+
+    .lightboxImg {
+        height: 50%;
+        max-width: 90%;
+    }
+}
+
+

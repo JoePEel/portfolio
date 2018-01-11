@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- Required meta tags -->
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+<!-- Bootstrap CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
+<link rel="stylesheet" type="text/css" href="quiz.css">
+</head>
+<body>
+
+
+<div class="container">
+<a href="../index.php">Take me back to joepeel.co.uk</a>
+<h1 id="title">Quiz Time</h1>
+
+
+<div id="gameSelector">
+    <div class="row justify-content-md-center">
+        <div class="col-md-6">   
+            <form id="numPlayersForm">
+                <label for="numPlayers">Number of Players</label>
+                <select type="select" id="numPlayers">
+                <option value="1">1</option>
+                <option value="2">2</option>
+                </select>
+                <button type="submit" id="submit" class="btn btn-secondary">Play</button>
+            </form>
+        </div>
+    </div>
+</div>
+    
+<div id="gameContainer">
+    <div class="row justify-content-md-center">
+            
+        <div id="onePlayerContainer" class="col-md-4">
+        <div class="overlayOne overlay">
+        <img src="profile.png">
+        <h2 id="playerOneScore" class="score"></h2>
+        <div class="bingContainer row justify-content-md-center">
+            <div id="1bing0" class="col-2 bing"></div>
+            <div id="1bing2" class="col-2 bing"></div>
+            <div id="1bing4" class="col-2 bing"></div>
+            <div id="1bing6" class="col-2 bing"></div>
+            <div id="1bing8" class="col-2 bing"></div>
+        </div>
+        </div>
+        </div>
+
+
+        <div id="questionContainer" class="col-md-4">
+        <h2 id="questionTitle"></h2>
+        <h4 id="question"></h4>
+        <ul id="answers">
+        <li id="answer1"></li>
+        <li id="answer2"></li>
+        <li id="answer3"></li>
+        <li id="answer4"></li>
+        </ul>
+        </div>
+
+
+        <div id="resultsContainer" class="col-md-4">
+        <h1 id="winner"></h1>
+        <h2 id="playAgain">Play Again</h2>
+        </div>
+
+
+        <div id="twoPlayerContainer" class="col-md-4">
+        <div class="overlayTwo overlay">
+        <img src="profile.png">
+        <h2 id="playerTwoScore" class="score"></h2>
+        <div class="bingContainer row justify-content-md-center">
+            <div id="2bing1" class="col-2 bing"></div>
+            <div id="2bing3" class="col-2 bing"></div>
+            <div id="2bing5" class="col-2 bing"></div>
+            <div id="2bing7" class="col-2 bing"></div>
+            <div id="2bing9" class="col-2 bing"></div>
+        </div>
+        </div>
+        </div>
+        
+    </div>
+</div>
+    
+<!-- Page container   -->
+</div>
+
+<script
+  src="https://code.jquery.com/jquery-3.2.1.js"
+  integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE="
+  crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
+
+
+<script>
+$(document).ready(function() {
+  
+var numPlayers, playerOneScore, playerTwoScore, qindex, realAnswer, playerAnswer, playerTurn, bingIndex, winner;
+var questions = [
+    ["When found on a beer bottle, what does the acronym IPA stand for?", "Imaginary Purple Ale", "Indian Pale Ale", "Includes Proper Alcohol", "Indianapolis Pale Ale", "Indian Pale Ale"],
+    ["What does the Japanese phrase, 'domo arigato' mean in English?", "Thank you very much", "Get out now", "Thank me a lot", "It doesn't mean anything", "Thank you very much"],
+    ["An animal that lives part of its life on land and part in water is known as what?", "Undecided", "Greedy", "A Hydromammal", "An Amphibian", "An Amphibian"],
+    ["What color do you get when you mix yellow and blue?", "Green", "Dark blue", "Purple", "Black", "Green"],
+    ["What former planet was demoted to a dwarf planet in 2006?", "Neptune", "Mercury", "Venus", "Pluto", "Pluto"],
+    ["In what year was the Nintendo 64 officially released?", 1994, 1995, 1996, 1997, 1996],
+    ["Which shark is the biggest?", "Great white shark", "Whale shark", "Bull shark", "Basking shark", "Whale shark"],
+    ["What ingredient in bread causes it to rise?", "Yeast", "Sugar", "Flour", "Salt", "Yeast"],
+    ["Who played the female lead role in the 1986 sci-fi movie 'Aliens'?", "Laura Dern", "Melania Trump", "Sigourney Weaver", "Andie MacDowell", "Sigourney Weaver"],
+    ["The slogan 'Just Do It' was created in 1988 for which company?", "Nike", "Lonsdale", "Adidas", "Reebok", "Nike"]
+];
+   
+    
+gameStart();
+ 
+      
+//Ask question function    
+function question(index){
+        document.getElementById("playerOneScore").textContent = playerOneScore;
+        document.getElementById("playerTwoScore").textContent = playerTwoScore;
+        document.getElementById("question").textContent = questions[index][0];
+        document.getElementById("answer1").textContent = questions[index][1];
+        document.getElementById("answer2").textContent = questions[index][2];
+        document.getElementById("answer3").textContent = questions[index][3];
+        document.getElementById("answer4").textContent = questions[index][4];
+    
+        realAnswer = questions[index][5];
+}
+ 
+   
+//Select answer
+document.getElementById("answers").addEventListener("click", function(event){
+   
+    playerAnswer = event.target.textContent;
+    
+    //Get "bing index" to select appropriate circle to be coloured depending on num players
+    if(numPlayers == 2){
+    bingIndex = qindex;
+    } else if (numPlayers == 1) {
+    bingIndex = qindex * 2;
+    }     
+    
+    //If correct answer style "bing" to green and update score;
+    if(realAnswer == playerAnswer){
+        if(numPlayers == 1 || playerTurn == 1){
+            playerOneScore += 1;
+       document.getElementById("1bing" + bingIndex).style.backgroundColor = "rgba(120, 228, 62, 0.7)";
+    } else if(playerTurn == 2){
+            playerTwoScore += 1;
+            document.getElementById("2bing" + bingIndex).style.backgroundColor = "rgba(120, 228, 62, 0.7)";
+    }
+    
+    //Display Score
+    document.getElementById("playerOneScore").textContent = playerOneScore;
+    document.getElementById("playerTwoScore").textContent = playerTwoScore;
+        
+    //Else style "bing" to red;
+    } else {
+        if(numPlayers == 1 || playerTurn == 1){
+        document.getElementById("1bing" + bingIndex).style.backgroundColor = "rgba(216, 12, 12, 0.7)";
+    } else if(playerTurn == 2){
+        document.getElementById("2bing" + bingIndex).style.backgroundColor = "rgba(216, 12, 12, 0.7)";
+    }
+    }
+
+    //Add and remove overlay and change player turn
+    if(playerTurn == 1){
+        $(".overlayTwo").removeClass("overlay");
+        $(".overlayOne").addClass("overlay");
+        $("#questionTitle").text("Player 2's Turn");
+        playerTurn = 2;
+    } else if (playerTurn == 2) {
+        $(".overlayTwo").addClass("overlay");
+        $(".overlayOne").removeClass("overlay");
+        $("#questionTitle").text("Player 1's Turn");
+        playerTurn = 1;
+    }
+    
+    //update qindex
+    qindex += 1;
+    
+
+
+    //Check if question limit reached and display results if so
+    if((numPlayers == 2 && qindex <= 9) || (numPlayers == 1 && qindex <= 4)){
+        question(qindex);
+    } else {
+        
+        //Message conditionals
+        if(playerOneScore > playerTwoScore && numPlayers == 2){
+             $("#winner").text("Player 1 Wins!");
+        } else if (playerOneScore < playerTwoScore && numPlayers == 2){
+             $("#winner").text("Player 2 Wins!");
+        } else if (playerOneScore == playerTwoScore && numPlayers == 2){
+            $("#winner").text("It's a Draw!");
+        } else if (numPlayers == 1) {
+            $("#winner").text("You scored " + playerOneScore + " out of 5!");
+        }
+        
+        //Show results container
+        $("#questionContainer").hide();
+        $("#resultsContainer").fadeIn();
+
+        //Play game again
+        $("#playAgain").on("click", function(){
+           gameStart(); 
+        });
+        }    
+});
+    
+        
+function gameStart(){
+    
+    //Reset Values and display properties
+    document.getElementById("gameContainer").style.display = "none";
+    document.getElementById("resultsContainer").style.display = "none";
+    $("#gameSelector").fadeIn();
+    $(".bing").css("background-color", "grey");
+    $(".overlayOne").removeClass("overlay");
+    qindex = 0;
+    playerOneScore = 0;
+    playerTwoScore = 0;
+    numPlayers = 0;
+    playerTurn = 0;
+    bingIndex = 0;
+    
+    //Listen for number of players to be selected
+    document.getElementById("submit").addEventListener("click", function(event){
+        
+        event.preventDefault();
+        numPlayers = document.getElementById("numPlayers").value;
+        $("#gameSelector").slideUp();
+        document.getElementById("gameContainer").style.display = "block";
+        document.getElementById("questionContainer").style.display = "block";
+        
+        if(numPlayers == 1){
+            document.getElementById("twoPlayerContainer").style.display = "none";  
+        } else if (numPlayers == 2){
+            document.getElementById("twoPlayerContainer").style.display = "block";
+            $("#questionTitle").text("Player 1's Turn");
+            playerTurn = 1;
+        }
+        
+        //go to first question
+        question(qindex);
+    });    
+}
+
+
+
+//Document ready brackets
+});
+</script>
+    
+    
+  </body>
+</html>   
+    

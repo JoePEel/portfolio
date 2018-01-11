@@ -1,0 +1,513 @@
+/*
+backgrounds / tables - #e1d9f7
+top menu - #39393a
+
+text none active - #969696
+text active - white
+
+green - #8cff91
+amber - #ffbd44
+red - #ff7654
+
+
+/* Login Home page */
+
+body{
+    font-family: 'Muli', sans-serif;
+}
+
+#header {
+    background-color: #39393a;
+    color: white;
+    padding-top: 2em;
+    padding-bottom: 2em;
+}
+
+.cardTitle {
+    text-align: center;
+    margin-top: 1.5em;
+    margin-bottom: 1.5em;
+}
+
+
+#phpError {
+    color: #db7d13;
+    padding: 10px;
+    margin-top: 20px;
+}
+
+#logSubmit {
+    margin-top: 2em;
+}
+
+#logInDiv {
+    background-color: #e1d9f7;
+    border-radius: 4px;
+    margin-top: 2em;
+    padding: 1em;
+}
+
+.toBold {
+    font-weight: 600;
+}
+
+/*General*/
+
+.myBtnSuccess {
+    background-color: #8cff91;
+    
+}
+
+
+/* Admin home */
+
+#topBar{
+    background-color: #39393a;
+    color: white;
+    padding-top: .5em;
+    padding-bottom: .3em;
+}
+
+#logout {
+    text-align: center;
+}
+
+.titleBar {
+    background-color: #e1d9f7;
+    text-align: center;
+    padding-top: .5em;
+    padding-bottom: .5em;
+}
+
+#pageDiv {
+    margin-right: 0;
+    padding-right: 0;
+}
+
+
+/*Side Nav*/
+
+#sideNavDiv {
+    padding-right: 0;
+}
+
+
+.sideNav {
+    background-color: #e1d9f7;
+    height: 100%;
+    max-height: 500px;
+    padding-left: 0;
+}
+
+.sideNav ul {
+    display: flex;
+    
+}
+.sideNav a {
+    text-decoration: none;
+    color: #39393a;
+    font-size: 1.2em;
+}
+
+.sideNav li {
+    flex-direction: column;
+    transition: color .3s;
+    font-weight: 700;
+    list-style: none;
+    padding-left: 20px;
+    transition: color .3s, background-color .3s;
+    padding-top: 1em;
+    padding-bottom: 1em;
+}
+
+.sideNav li:hover {
+    color: black;
+    background-color: white;
+}
+
+
+
+.selected {
+    color: black;
+    border-right: 4px solid black;
+    background-color: white;
+}
+
+
+/*Sub side nav*/
+
+
+#subSideNavDiv {
+    padding-left: 0;
+    
+}
+
+
+.subSideNav {
+    background-color: #969696;
+    padding-left: 0;
+    height: 500px;
+    margin-bottom: 0;
+}
+
+.subSideNav ul {
+    display: flex;
+    
+}
+.subSideNav a {
+    text-decoration: none;
+    color: white;
+    font-size: 1.2em;
+}
+
+.subSideNav li {
+    flex-direction: column;
+    transition: color .3s;
+    font-weight: 700;
+    list-style: none;
+    padding-left: 20px;
+    transition: color .3s, background-color .3s;
+    padding-top: 1em;
+    padding-bottom: 1em;
+}
+
+.subSideNav li:hover {
+    color: black;
+    background-color: white;
+}
+
+
+/* Dashboard */
+
+#piechart{
+    min-width: 400px;
+    max-width: 100%;
+    height: 600px;
+}
+
+#columnchart{
+    min-width: 400px;
+    max-width: 100%;
+    height: 450px;
+    margin-top: 4em;
+}
+
+
+
+/* Vacancies */
+
+
+/*Add New */
+
+.newForm {
+    max-width: 500px;
+    margin-left: 5em;
+    margin-top: 3em;
+    margin-bottom: 5em;
+}
+
+ .table {
+    width: 90%;
+    margin: 0 auto;
+}
+
+.vacancyResultsTable{
+    margin-top: 3em;
+}
+
+/* Vacancy*/
+
+
+.reject td{
+    background-color: #ff7654;
+}
+.pending td{
+    background: #ffbd44;
+}
+.interview td{
+    background: #8cff91;
+}
+
+#vacancyDataDisplayDiv, #candidateDataDisplayDiv {
+    padding-left: 3em;
+}
+
+#vacancyDataDisplayDiv{
+    width: 100%;
+}
+
+.dataSummary {
+    list-style: none;
+    margin-top: 5em;
+    padding-left: 0;
+}
+
+.dataSummary span {
+    font-weight: 600;
+}
+
+.hide{
+    display: none;
+}
+
+#prosprectListDiv {
+    padding-top: 2em;
+    width: 100%;
+    margin-left: -25px;
+}
+
+#prosprectList {
+    padding-left: 0px;
+    
+}
+#prosprectList td{
+    background-color: #e1d9f7;
+  
+}
+
+#statusFormButton {
+    display: inline-block;
+}
+
+#vacancyProspectOptionsDiv{
+    margin-top: 3em;
+    margin-left: 5px;
+}
+
+
+
+/*Recent Candidates*/
+
+#candidateSearch{
+    padding-top: 3em;
+    margin-left: 3em;
+}
+
+
+
+
+/* candidate*/
+
+.candidateResultsTable{
+    margin-top: 3em;
+}
+
+#vacancyDataDisplayDiv, #candidateDataDisplayDiv, #managerDataDisplayDiv {
+    min-width: 300px;
+}
+#vacancyContent, #canidateContent {
+    width: 100%;
+}
+#candidateProspectOptionsDiv {
+    max-width: 40%;
+    margin-top: 5em;
+}
+
+.comment span{
+   font-weight: 700;
+}
+
+#viewCommentDiv{
+    margin-top: 3em;
+    padding-left: 3em;
+}
+
+#viewCommentDiv h5 {
+    margin-bottom: 1em;
+}
+
+#addCommentDiv {
+    margin-top: 1em;
+    max-width: 40%;
+
+}
+
+#candidateProspectOptionsDiv btn {
+    background-color: red;
+}
+
+.candidateButton{
+    margin-left: -15px;
+}
+
+#cvFileDiv{
+    margin-left: -1em;
+}
+
+#addCommentDiv h5{
+    margin-left: -15px;
+}
+
+
+/*Manager*/
+
+#managerDataDisplayDiv {
+    margin-left: 3em;
+    margin-bottom: 2em;
+}
+
+#managersTable {
+    margin-top: 3em;
+}
+
+#managerProspectOptionsDiv h5 {
+    margin-left: 2.5em;
+    font-weight: 600;
+}
+
+/*User*/
+
+.delete {
+    color: #ff7654;
+}
+
+.delete:hover {
+    color: #ff7654;
+}
+
+#usersTable {
+    margin-top: 3em;
+}
+
+/*Generel*/
+
+.deleteBtn {
+background-color: #ff7654;
+    margin-top: 1em;
+}
+
+.footer{
+    padding-top: 2em;
+    margin: 0 auto;
+    text-align: center;
+}
+    
+
+
+/*Media Queries */
+
+@media only screen and (max-width: 850px){
+    
+   
+    .sideNav a {
+        font-size: 1.2em;
+    }
+
+    .sideNav li {
+        padding-left: 5px;
+
+    }
+    
+    #subSideNavDiv {
+        padding-right: 0px;
+    }    
+    
+    .newForm {
+    max-width: 100%;
+        padding-right: 2em;
+}
+
+@media only screen and (max-width: 767px){
+    
+    .sideNav li {
+    padding-left: 20px;
+}
+    
+    .sideNav {
+    margin-bottom: 0;
+}
+    
+    #topTitle{
+        text-align: center;
+    }
+    
+    .subSideNav{
+        height: 100%;
+    }
+    
+    .subSideNav li{
+        padding-left: 2em;
+    }
+    
+    #prospectForm {
+        margin-left: 4em;
+    }
+    
+    #viewCommentDiv{
+        padding-left: 3em;
+    }
+    
+    #canSecondRow{
+    box-sizing: border-box;
+    }
+    
+    #addCommentDiv{
+        margin-left: 4em;
+    }
+    
+
+    #candidateProspectOptionsDiv {
+    max-width: 80%;
+    padding-right: 2em;
+}
+    
+    #columnchart {
+    max-width: 100%;
+    margin-left: 50px;
+    margin-top: -100px;
+    }
+    
+}
+
+
+@media only screen and (max-width: 642px){
+    
+    #canSecondRow{
+        flex-direction: column-reverse;
+    }
+    
+    .dataSummary{
+        margin-top: 2em;
+    }
+    
+    #candidateProspectOptionsDiv{
+        margin-top: 2em;
+        margin-left: -1em;
+    }
+    
+    #addCommentDiv{
+        max-width: 80%;
+        margin-left:3em;
+        margin-top: 2em;
+    }
+    
+    #addCommentDiv h5{
+        margin-left: -15px;
+    }
+    
+    #prosprectListDiv {
+        margin-left: -15px;
+    }
+    
+    #columnchart {
+        max-width: 100%;
+        margin-left: 10px;
+    }
+    
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

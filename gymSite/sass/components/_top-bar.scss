@@ -1,0 +1,49 @@
+.top-bar {
+    background-color: $colour-action;
+    width: 100%;
+    height: 5rem;
+    
+    &__container{
+        width: 95%;
+        padding-left: 0px;
+        position: relative;
+        margin: 0 auto;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        
+        p {
+            font-size: 2rem;
+            color: black;
+            font-weight: 600;
+            margin-top: .8rem;
+        }
+    }
+    
+    &__btn-container {
+        padding-top: .5rem;
+        width: 35rem;
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-end;
+        
+    }
+}
+
+@media screen and (max-width: 900px) {
+    
+    .top-bar__container{
+        justify-content: flex-end;
+    
+    p {
+        display: none;
+    }
+    }
+}
+
+@media screen and (max-width: 495px) {
+    
+    .top-bar {
+        display: none;
+    }
+}

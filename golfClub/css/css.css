@@ -1,0 +1,388 @@
+body {
+  font-family: "Montserrat", sans-serif; }
+
+button:hover {
+  cursor: pointer; }
+
+.slidesBody {
+  width: 100%;
+  height: 500px; }
+
+.topBarNav {
+  padding-top: 10px;
+  padding-bottom: 5px;
+  background-color: rgba(55, 55, 62, 0.1); }
+  .topBarNav .row {
+    max-width: 90%;
+    margin: 0 auto;
+    padding-bottom: 5px; }
+  .topBarNav i {
+    color: #600c13;
+    margin-right: 10px;
+    margin-left: 10px; }
+    .topBarNav i:hover {
+      cursor: pointer; }
+
+#socialIcons {
+  margin-top: 5px; }
+
+#socialIcons li {
+  margin-left: 20px; }
+
+.secondBarNav {
+  max-width: 70%;
+  margin: 0 auto;
+  font-family: "Lora", serif;
+  color: #600c13;
+  font-size: 20px;
+  font-weight: 700; }
+  .secondBarNav ul {
+    align-items: center;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between; }
+  .secondBarNav img {
+    height: 80px; }
+  .secondBarNav a {
+    color: inherit;
+    text-decoration: inherit; }
+    .secondBarNav a:hover {
+      color: rgba(55, 55, 62, 0.7); }
+
+#mobileNavBtns {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  display: none; }
+
+#mobileNav {
+  display: none; }
+
+.slidesTitle {
+  text-align: center;
+  margin-top: 300px;
+  color: white; }
+  .slidesTitle h1 {
+    font-family: "Lora", serif;
+    font-weight: 700;
+    font-size: 55px; }
+  .slidesTitle h5 {
+    font-family: "Montserrat", sans-serif;
+    margin-top: 1em; }
+
+.bigLetter {
+  font-size: 40px;
+  color: #600c13;
+  font-family: "Lora", serif;
+  margin-right: 2px; }
+
+.buttons {
+  width: 100%;
+  margin: 0 auto;
+  text-align: center;
+  margin-bottom: 2em;
+  position: relative; }
+  .buttons button {
+    background-color: rgba(55, 55, 62, 0.7);
+    border: 1px solid white;
+    color: white;
+    border-radius: 3px;
+    margin-left: 30px;
+    margin-right: 30px;
+    font-size: 24px;
+    margin-bottom: 1em; }
+    .buttons button:hover {
+      background-color: rgba(55, 55, 62, 0.9);
+      cursor: pointer; }
+
+.backBtn {
+  background-color: rgba(55, 55, 62, 0.7);
+  border: 1px solid white;
+  color: white;
+  border-radius: 3px;
+  margin-bottom: 1em; }
+  .backBtn:hover {
+    background-color: rgba(55, 55, 62, 0.9);
+    cursor: pointer; }
+
+.aboutUs {
+  margin-top: 4em; }
+  .aboutUs p {
+    max-width: 80%;
+    text-align: center;
+    margin: 0 auto;
+    line-height: 30px;
+    margin-bottom: 2em; }
+
+#bookModal, .modal-body {
+  min-height: 300px; }
+
+#days ul {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  justify-content: space-around;
+  padding-left: 0px; }
+#days li {
+  list-style: none;
+  border-radius: 3px;
+  max-width: 150px;
+  max-height: 40px;
+  margin: 0 auto;
+  margin-bottom: 10px; }
+  #days li:hover {
+    cursor: pointer;
+    background-color: rgba(55, 55, 62, 0.7);
+    color: white; }
+  #days li h5 {
+    padding: 5px; }
+
+td, th {
+  text-align: center;
+  padding-top: 2px;
+  padding-bottom: 2px;
+  line-height: 12px; }
+
+td:hover {
+  background-color: rgba(55, 55, 62, 0.7);
+  color: white;
+  cursor: pointer; }
+
+#ajaxLoader {
+  margin-top: 100px;
+  margin: 0 auto;
+  text-align: center; }
+  #ajaxLoader img {
+    margin-top: 75px;
+    margin-bottom: 75px; }
+
+#finalMessage {
+  text-align: center; }
+  #finalMessage h4 {
+    margin-top: 40px;
+    margin-bottom: 40px; }
+
+#onlyDemo {
+  margin-top: 1em;
+  margin-bottom: 1em; }
+
+.guideImg {
+  max-height: 300px;
+  text-align: center; }
+  .guideImg img {
+    height: 300px;
+    margin: 0 auto;
+    max-width: 100%; }
+
+.activated {
+  background-color: #600c13;
+  color: white; }
+
+#courseButtons {
+  display: flex;
+  flex-direction: row;
+  margin-top: 3em;
+  max-width: 100%;
+  justify-content: space-around;
+  flex-wrap: nowrap; }
+  #courseButtons ul {
+    padding: 10px; }
+  #courseButtons li {
+    list-style: none;
+    border-radius: 2px;
+    box-shadow: 1px 1px 1px black;
+    padding: 5px;
+    width: 35px;
+    text-align: center; }
+    #courseButtons li:hover {
+      background-color: #600c13;
+      color: white;
+      cursor: pointer; }
+
+#mobileCourseButtons {
+  display: none;
+  text-align: center;
+  margin-top: 2em;
+  margin-bottom: 2em; }
+  #mobileCourseButtons h5 {
+    display: inline-block;
+    margin-right: 3em;
+    margin-left: 3em;
+    color: #600c13;
+    font-size: 30px;
+    font-weight: 700; }
+
+#holeDesc {
+  max-width: 500px;
+  margin: 0 auto;
+  margin-top: 1em; }
+
+#courseGuideContainer {
+  position: relative; }
+  #courseGuideContainer button {
+    background-color: rgba(55, 55, 62, 0.7);
+    border: 1px solid white;
+    color: white;
+    border-radius: 3px;
+    font-size: 20px; }
+    #courseGuideContainer button:hover {
+      background-color: rgba(55, 55, 62, 0.9);
+      cursor: pointer; }
+
+#closeButton {
+  position: absolute;
+  right: 20px; }
+
+#midSection {
+  background-color: rgba(55, 55, 62, 0.1); }
+
+#infoCards {
+  padding-top: 3em;
+  padding-bottom: 3em;
+  max-width: 90%;
+  margin: 0 auto; }
+  #infoCards img {
+    max-height: 300px; }
+  #infoCards button {
+    background-color: rgba(55, 55, 62, 0.7);
+    border: 1px solid white;
+    color: white;
+    border-radius: 3px;
+    font-size: 20px; }
+    #infoCards button:hover {
+      background-color: rgba(55, 55, 62, 0.9);
+      cursor: pointer; }
+  #infoCards h4 {
+    font-family: "Lora", serif;
+    color: #600c13;
+    margin-bottom: 1em; }
+
+#newsSection {
+  background-color: white;
+  padding-top: 3em;
+  padding-bottom: 4em; }
+  #newsSection h3 {
+    font-family: "Lora", serif;
+    color: #600c13;
+    margin-bottom: 1.5em; }
+
+.newsItemBorder {
+  border-right: 2px solid rgba(55, 55, 62, 0.1); }
+
+.newsItem h5 {
+  font-family: "Lora", serif;
+  color: #600c13; }
+.newsItem p {
+  font-family: "Montserrat", sans-serif; }
+  .newsItem p span {
+    color: #600c13;
+    margin-left: 10px;
+    font-weight: 700; }
+    .newsItem p span:hover {
+      text-decoration: underline;
+      cursor: pointer; }
+
+#footer {
+  background-color: rgba(55, 55, 62, 0.1); }
+  #footer p {
+    font-family: "Montserrat", sans-serif;
+    padding-top: 3em;
+    padding-bottom: 3em;
+    margin-bottom: 0px; }
+
+@media only screen and (max-width: 1000px) {
+  #courseButtons ul {
+    padding: 4px; }
+
+  .secondBarNav {
+    max-width: 90%; } }
+@media only screen and (max-width: 800px) {
+  #mobileCourseButtons {
+    display: block; }
+
+  #courseButtons {
+    display: none; }
+
+  #holeDesc {
+    display: none; }
+
+  #largeScreenNav {
+    display: none; }
+
+  #mobileNavBtns {
+    display: block;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    max-width: 100%;
+    padding-left: 0px;
+    margin-bottom: 0px; }
+
+  #mobileNav {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    width: 150px;
+    left: 0;
+    z-index: 100;
+    background-color: white; }
+
+  #topEmail {
+    display: none; }
+
+  .topBarNav {
+    padding-top: 5px;
+    padding-bottom: 0px; }
+    .topBarNav .row {
+      max-width: 100%; }
+    .topBarNav i {
+      margin-left: 5px;
+      margin-right: 5px; } }
+@media only screen and (max-width: 767px) {
+  .card {
+    margin-bottom: 2em; }
+
+  #infoCards {
+    padding-bottom: 1em; }
+
+  .buttons {
+    margin-bottom: 3em; }
+    .buttons button {
+      margin-left: 15px;
+      margin-right: 15px;
+      font-size: 22px; }
+
+  .slidesTitle {
+    max-width: 95%;
+    margin-left: auto;
+    margin-right: auto; } }
+@media only screen and (max-width: 576px) {
+  .newsItemBorder {
+    border-right: none; }
+
+  .newsItem {
+    margin-bottom: 1em; }
+
+  .guideImg {
+    max-height: 300px;
+    text-align: center; }
+    .guideImg img {
+      max-width: 100%; } }
+@media only screen and (max-width: 435px) {
+  #mobileNavBtns {
+    margin: 0 auto;
+    max-width: 95%; }
+
+  #infoCards {
+    max-width: 100%; } }
+@media only screen and (max-width: 343px) {
+  .slidesTitle {
+    margin-top: 250px; }
+    .slidesTitle h1 {
+      font-size: 45px; }
+
+  #mobileCourseButtons h5 {
+    margin-right: 2em;
+    margin-left: 2em; } }
+
+/*# sourceMappingURL=css.css.map */

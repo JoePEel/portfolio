@@ -1,0 +1,863 @@
+* {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box; }
+
+input:focus {
+  outline: 1px solid #8BC34A; }
+
+* {
+  font-family: 'Source Sans Pro', sans-serif; }
+
+#barsNav {
+  display: none;
+  position: absolute;
+  right: 0; }
+  #barsNav:hover {
+    cursor: pointer; }
+
+.mobileNavOverlay {
+  background: rgba(0, 0, 0, 0.7);
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  z-index: 450;
+  display: none; }
+
+#headerNav {
+  background-color: #B3E5FC;
+  box-shadow: 3px 0px 4px #757575;
+  position: relative;
+  z-index: 500;
+  width: 100%; }
+  #headerNav h2 {
+    font-weight: 300; }
+
+#navContainer {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row; }
+
+#topNav {
+  width: 70%;
+  position: absolute;
+  right: 0;
+  top: 30%;
+  bottom: 70%; }
+  #topNav ul {
+    list-style: none;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    color: grey; }
+  #topNav li:hover {
+    color: white;
+    cursor: pointer; }
+  #topNav a:link {
+    color: grey;
+    text-decoration: none; }
+  #topNav a:visited {
+    color: grey;
+    text-decoration: none; }
+  #topNav a:hover {
+    color: white;
+    text-decoration: none; }
+  #topNav a:active {
+    text-decoration: none; }
+
+.vacanciesOverview {
+  float: left;
+  margin-bottom: 2em; }
+  .vacanciesOverview h4 {
+    color: #0288D1; }
+  .vacanciesOverview p {
+    margin-bottom: 0px; }
+
+.sliderImg {
+  height: 500px;
+  width: 100%;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover; }
+
+.slider1 {
+  background-image: url("img/frontpage.jpg");
+  background-attachment: fixed; }
+
+.overlay {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: -moz-linear-gradient(top, rgba(0, 0, 0, 0) 30%, black 100%);
+  background: -webkit-linear-gradient(top, rgba(0, 0, 0, 0) 30%, black 100%);
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 30%, white 90%);
+  z-index: 100; }
+  .overlay h1 {
+    color: black;
+    font-size: 400%;
+    font-weight: 300;
+    margin-bottom: 20px; }
+  .overlay p {
+    color: black;
+    display: inline-block; }
+  .overlay button {
+    display: inline-block;
+    margin-left: 1em;
+    background-color: #8BC34A;
+    border: none;
+    border-radius: 4px;
+    padding: 5px;
+    transition: all 0.2s ease; }
+    .overlay button:hover {
+      cursor: pointer;
+      color: white; }
+    .overlay button:focus {
+      outline: 0; }
+
+.aboutContainer {
+  margin: 0 auto;
+  margin-top: 3em;
+  margin-bottom: 5em; }
+
+.officeImg {
+  background-image: url("img/office.jpg");
+  height: 400px;
+  width: 100%;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  border-radius: 5px; }
+
+.meetTeamContainer {
+  background-color: #03A9F4;
+  padding-top: 2em;
+  padding-bottom: 6em;
+  margin-bottom: 8em; }
+  .meetTeamContainer .row {
+    padding-top: 20px; }
+
+.profile {
+  height: 280px;
+  width: 80%;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  border-radius: 50%;
+  margin: 0 auto;
+  margin-top: 1em; }
+  .profile h4 {
+    color: #0288D1;
+    width: 100%;
+    text-align: center;
+    position: relative;
+    top: 300px;
+    padding-top: 5px;
+    padding-bottom: 5px; }
+
+.profile1 {
+  background-image: url("img/profile1.png"); }
+
+.profile2 {
+  background-image: url("img/profile2.png"); }
+
+.staffInfo h4 {
+  color: #0288D1;
+  background-color: white;
+  text-align: center;
+  width: 100%;
+  margin-top: 1em;
+  padding: .5em 0em; }
+.staffInfo p {
+  position: absolute;
+  bottom: -190px;
+  margin-bottom: 40px;
+  max-width: calc(100% - 30px);
+  background-color: white;
+  padding-left: 1em;
+  padding-right: 1em;
+  padding-bottom: .5rem;
+  border-radius: 2px;
+  box-sizing: border-box; }
+
+.sectionTag {
+  position: absolute;
+  top: -50px;
+  float: left;
+  margin-bottom: 40px;
+  background-color: white;
+  padding-left: 1em;
+  padding-right: 1em;
+  padding-bottom: .5em; }
+
+.bigNBold {
+  font-weight: 600;
+  font-size: 20px; }
+
+.benefitsHeader {
+  background-color: #0288D1;
+  color: white;
+  height: 400px;
+  background-image: url("img/canteen.jpg");
+  background-attachment: fixed;
+  position: relative;
+  transform: skewY(-1.5deg);
+  margin-bottom: 4em; }
+  .benefitsHeader p {
+    max-width: 60%;
+    margin: 0 auto;
+    margin-top: 140px;
+    color: white;
+    transform: skewY(1.5deg);
+    font-size: 20px; }
+  .benefitsHeader h3 {
+    transform: skewY(1.5deg);
+    position: absolute;
+    color: black;
+    bottom: -15px;
+    margin-bottom: -135px;
+    background-color: white;
+    padding-left: 1em;
+    padding-right: 1em;
+    padding-top: .5em; }
+  .benefitsHeader .benefitsContentContainer {
+    width: 100%; }
+
+.overlay2 {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 100%;
+  width: 100%;
+  background: rgba(3, 169, 244, 0.7); }
+
+.benefit {
+  text-align: center; }
+  .benefit i {
+    color: #8BC34A;
+    margin-bottom: 10px;
+    transition: all 0.3s ease; }
+    .benefit i:hover {
+      cursor: pointer;
+      color: #71a436;
+      transform: scale(1.2); }
+  .benefit p {
+    max-width: 70%;
+    margin: 0 auto; }
+
+.benefitContainer {
+  margin-top: 2em;
+  max-width: 70%; }
+  .benefitContainer .row {
+    margin-bottom: 2em; }
+
+#currentVacancies {
+  margin: 0 auto;
+  margin-bottom: 2em;
+  max-width: 80%; }
+
+#currentVacanciesOuter {
+  margin: 0 auto; }
+
+.secTitle {
+  background-color: #03A9F4;
+  margin-top: 50px;
+  margin-bottom: 50px;
+  width: 100%;
+  height: 60px; }
+  .secTitle h3 {
+    position: absolute;
+    top: -15px;
+    margin-bottom: 40px;
+    background-color: white;
+    padding-left: 1em;
+    padding-right: 1em;
+    padding-bottom: .5em; }
+
+.fullDetails {
+  background-color: white;
+  border: 2px solid #8BC34A;
+  transition: all 0.2s ease;
+  border-radius: 6px; }
+  .fullDetails:focus {
+    outline: 0; }
+  .fullDetails:hover {
+    cursor: pointer;
+    border-radius: 4px;
+    border: 2px solid #71a436; }
+
+.backToVacs {
+  background-color: white;
+  border: 2px solid #03A9F4;
+  transition: all 0.2s ease;
+  border-radius: 6px;
+  float: right;
+  flex-direction: column;
+  margin-right: 3em;
+  margin-bottom: 1em;
+  max-height: 30px; }
+  .backToVacs:focus {
+    outline: 0; }
+  .backToVacs:hover {
+    cursor: pointer;
+    border-radius: 4px;
+    border: 2px solid #0288D1; }
+
+.singleVacacnyOverview {
+  margin-top: 2em;
+  min-height: 400px; }
+  .singleVacacnyOverview h4 {
+    color: #0288D1; }
+
+.apply {
+  background-color: white;
+  border: 2px solid #8BC34A;
+  transition: all 0.2s ease;
+  border-radius: 6px;
+  margin-top: 1em; }
+  .apply:focus {
+    outline: 0; }
+  .apply:hover {
+    cursor: pointer;
+    border-radius: 4px;
+    border: 2px solid #71a436; }
+
+#submitApplicationForm {
+  width: 1000px;
+  margin: 0 auto;
+  margin-bottom: 2em;
+  min-height: 400px; }
+  #submitApplicationForm input:focus {
+    outline: 1px solid #8BC34A; }
+  #submitApplicationForm input {
+    margin-top: .5em; }
+
+#submitApplicationBtn {
+  width: 200px;
+  margin: 0 auto;
+  margin-top: 2em;
+  background-color: white;
+  border: 2px solid #8BC34A;
+  transition: all 0.2s ease;
+  border-radius: 6px; }
+  #submitApplicationBtn:focus {
+    outline: 0; }
+  #submitApplicationBtn:hover {
+    cursor: pointer;
+    border-radius: 4px;
+    border: 2px solid #71a436; }
+
+.messageSuccessContainer {
+  display: block;
+  width: 100% !important;
+  margin-bottom: 1em; }
+
+.footerContainer {
+  display: block;
+  background-color: #0288D1;
+  color: white; }
+  .footerContainer h3 {
+    padding-top: 1em;
+    margin-bottom: 1em; }
+  .footerContainer ul {
+    list-style: none;
+    text-decoration: none;
+    padding-left: 0px;
+    margin-bottom: 2em; }
+    .footerContainer ul li:first-child {
+      margin-bottom: 1em; }
+  .footerContainer i {
+    margin-right: 20px; }
+    .footerContainer i:hover {
+      cursor: pointer; }
+
+#map {
+  height: 300px;
+  width: 80%;
+  margin: 0 auto;
+  margin-bottom: 30px; }
+
+.adminNav ul {
+  margin-left: 40%; }
+
+#adminContent, #adminSubNav {
+  margin-top: 3em; }
+  #adminContent hr, #adminSubNav hr {
+    margin: 0px; }
+
+.editSuccess {
+  margin-top: 1em; }
+
+.bold {
+  font-weight: 600; }
+
+#ajaxLoader {
+  text-align: center;
+  margin-top: 40px; }
+
+.appOverview {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin: 0 auto;
+  max-width: 90%;
+  padding: 1em 2em; }
+  .appOverview p {
+    margin-bottom: 0; }
+  .appOverview:hover {
+    background-color: #e4f6fe; }
+  .appOverview:first {
+    margin-top: 4em; }
+
+.appFirstLine {
+  display: flex;
+  flex-direction: row;
+  width: 60%;
+  align-items: baseline; }
+  .appFirstLine p {
+    margin-right: 1em; }
+
+.appSecondLine {
+  width: 40%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between; }
+  .appSecondLine button {
+    max-height: 35px; }
+
+.active {
+  color: white; }
+
+#searchForApp {
+  padding: 5px; }
+  #searchForApp:focus {
+    outline: 1px solid #8BC34A; }
+
+.viewCv {
+  background-color: white;
+  border: 2px solid #03A9F4;
+  transition: all 0.2s ease;
+  border-radius: 6px; }
+  .viewCv:focus {
+    outline: 0; }
+  .viewCv:hover {
+    cursor: pointer;
+    border-radius: 4px;
+    border: 2px solid #0288D1; }
+
+.rowTitle {
+  display: flex;
+  flex-direction: row;
+  align-items: baseline;
+  max-width: 50%; }
+  .rowTitle h4 {
+    margin-right: 1em; }
+
+.adminVacOverview {
+  display: flex;
+  flex-direction: row;
+  max-width: 100%;
+  padding: 1em 2em;
+  justify-content: space-between; }
+  .adminVacOverview:hover {
+    background-color: #e4f6fe; }
+  .adminVacOverview button {
+    padding-top: 0px;
+    padding-bottom: 0px;
+    height: 30px; }
+  .adminVacOverview .viewAppsFromVacs, .adminVacOverview .vacEdit {
+    background-color: white;
+    border: 2px solid #03A9F4;
+    transition: all 0.2s ease;
+    border-radius: 6px; }
+    .adminVacOverview .viewAppsFromVacs:focus, .adminVacOverview .vacEdit:focus {
+      outline: 0; }
+    .adminVacOverview .viewAppsFromVacs:hover, .adminVacOverview .vacEdit:hover {
+      cursor: pointer;
+      border-radius: 4px;
+      border: 2px solid #0288D1; }
+  .adminVacOverview .deleteVac {
+    background-color: white;
+    border: 2px solid #ff7556;
+    transition: all 0.2s ease;
+    border-radius: 6px; }
+    .adminVacOverview .deleteVac:focus {
+      outline: 0; }
+    .adminVacOverview .deleteVac:hover {
+      cursor: pointer;
+      border-radius: 4px;
+      border: 2px solid #ff4b23; }
+
+.btnRow {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 50%; }
+
+.blogOverview {
+  padding: 1em;
+  max-width: 80%;
+  margin: 0 auto; }
+  .blogOverview button {
+    margin-top: 5px; }
+  .blogOverview h4, .blogOverview p {
+    margin-bottom: 5px; }
+  .blogOverview hr {
+    width: 80%;
+    margin-top: 40px;
+    margin-bottom: 0px; }
+
+.blogOverviewAdmin {
+  max-width: 100%; }
+
+.blogOverviewHome h5 {
+  margin-bottom: 15px; }
+
+.blogNav ul {
+  margin-left: 50%; }
+
+.blogTitleInfo {
+  display: flex;
+  flex-direction: row;
+  align-items: baseline; }
+  .blogTitleInfo h4 {
+    margin-right: 1em; }
+
+.hoverBlue:hover {
+  background-color: #e4f6fe; }
+
+.blogEdit {
+  background-color: white;
+  border: 2px solid #03A9F4;
+  transition: all 0.2s ease;
+  border-radius: 6px;
+  margin-right: 1em; }
+  .blogEdit:focus {
+    outline: 0; }
+  .blogEdit:hover {
+    cursor: pointer;
+    border-radius: 4px;
+    border: 2px solid #0288D1; }
+
+.deleteBlog {
+  background-color: white;
+  border: 2px solid #ff7556;
+  transition: all 0.2s ease;
+  border-radius: 6px; }
+  .deleteBlog:focus {
+    outline: 0; }
+  .deleteBlog:hover {
+    cursor: pointer;
+    border-radius: 4px;
+    border: 2px solid #ff4b23; }
+
+.addNewBlogPostBtn, .addNewVacBtn {
+  background-color: white;
+  border: 2px solid #8BC34A;
+  transition: all 0.2s ease;
+  border-radius: 6px; }
+  .addNewBlogPostBtn:focus, .addNewVacBtn:focus {
+    outline: 0; }
+  .addNewBlogPostBtn:hover, .addNewVacBtn:hover {
+    cursor: pointer;
+    border-radius: 4px;
+    border: 2px solid #71a436; }
+
+#updateOrAddBlogPost, #editBlogPost, #submitEditVac, #submitNewVac {
+  margin-top: 2em;
+  margin-bottom: 2em; }
+
+#submitBlogBtn, #editBlogBtn, #submitEditVac, #submitNewVac {
+  margin-top: 2em;
+  background-color: white;
+  border: 2px solid #8BC34A;
+  transition: all 0.2s ease;
+  border-radius: 6px; }
+  #submitBlogBtn:focus, #editBlogBtn:focus, #submitEditVac:focus, #submitNewVac:focus {
+    outline: 0; }
+  #submitBlogBtn:hover, #editBlogBtn:hover, #submitEditVac:hover, #submitNewVac:hover {
+    cursor: pointer;
+    border-radius: 4px;
+    border: 2px solid #71a436; }
+
+.backToBlogPost, .backToVacsBtn, .backToVacsAdminBtn {
+  background-color: white;
+  border: 2px solid #03A9F4;
+  transition: all 0.2s ease;
+  border-radius: 6px; }
+  .backToBlogPost:focus, .backToVacsBtn:focus, .backToVacsAdminBtn:focus {
+    outline: 0; }
+  .backToBlogPost:hover, .backToVacsBtn:hover, .backToVacsAdminBtn:hover {
+    cursor: pointer;
+    border-radius: 4px;
+    border: 2px solid #0288D1; }
+
+.backToVacsAdminBtn, .backToVacsBtn {
+  margin-bottom: 2em; }
+
+#editBlogBtn, #submitBlogBtn {
+  margin-left: 15px;
+  margin-bottom: 2em; }
+
+.footer {
+  margin: 3em auto;
+  text-align: center;
+  margin-top: 5em; }
+
+.fixed {
+  position: fixed !important;
+  top: 0;
+  height: 40px;
+  padding-bottom: 15px; }
+  .fixed #header {
+    margin-top: 5px; }
+    .fixed #header h2 {
+      display: none; }
+  .fixed #topNav ul {
+    margin-top: -5px; }
+  .fixed #barsNav {
+    margin-top: -6px; }
+
+@media screen and (max-width: 1000px) {
+  #barsNav {
+    display: block; }
+
+  #headerNav ul {
+    display: none;
+    flex-direction: column;
+    position: fixed;
+    top: 70px;
+    margin: 0 auto;
+    right: 0;
+    left: 0;
+    padding-left: 0px;
+    text-align: center; }
+    #headerNav ul li {
+      margin-top: .5em; }
+
+  #topNav a:active {
+    color: white; }
+  #topNav a:visited {
+    color: white; }
+  #topNav a:link {
+    color: white; }
+  #topNav li {
+    font-size: 150%;
+    color: white; }
+
+  .showOverlay {
+    display: block; } }
+@media screen and (max-height: 400px) {
+  #headerNav ul {
+    top: 80px; }
+    #headerNav ul li {
+      margin-top: -5px; } }
+@media screen and (max-width: 1199px) {
+  .profile {
+    height: 250px; }
+
+  .meetTeamContainer {
+    padding-bottom: 8em;
+    margin-bottom: 10em; }
+    .meetTeamContainer p {
+      bottom: -240px; } }
+@media screen and (max-width: 991px) {
+  .sliderImg {
+    height: 400px; }
+
+  .overlay {
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 10%, white 80%); }
+
+  .profile {
+    height: 200px;
+    width: 100%; }
+    .profile h4 {
+      top: 244px; }
+
+  .meetTeamContainer {
+    margin-bottom: 14em; }
+    .meetTeamContainer p {
+      bottom: -315px; }
+
+  #map {
+    width: 100%; }
+
+  .benefitsHeader h3 {
+    margin-bottom: -75px; }
+
+  .benefit i:hover {
+    transform: scale(1); } }
+@media screen and (max-width: 767px) {
+  .sliderImg, .benefitsHeader {
+    background-attachment: scroll; }
+
+  .aboutContainer .officeImg {
+    margin-bottom: 2em; }
+  .aboutContainer p {
+    margin-bottom: 0px; }
+
+  .profile {
+    height: 250px;
+    max-width: 55%; }
+
+  .staffInfo {
+    margin-bottom: 10em; }
+    .staffInfo p {
+      position: absolute;
+      bottom: 30px; }
+
+  .meetTeamContainer {
+    padding-bottom: 0;
+    margin-bottom: 4em; }
+    .meetTeamContainer p {
+      bottom: -100px;
+      margin: 0 auto;
+      width: 100%; }
+
+  .profile:last {
+    margin-bottom: 0px; }
+
+  .benefitsHeader p {
+    margin-top: 80px; }
+
+  #address {
+    margin-bottom: 2em; } }
+@media screen and (max-width: 580px) {
+  #barsNav {
+    margin-right: 20px; }
+
+  .benefitContainer {
+    min-width: 100%; }
+
+  .staffInfo {
+    margin-bottom: 12em; } }
+@media screen and (max-width: 526px) {
+  .meetTeamContainer p {
+    bottom: -100px; } }
+@media screen and (max-width: 509px) {
+  .meetTeamContainer p {
+    bottom: -120px; } }
+@media screen and (max-width: 497px) {
+  .benefitsHeader p {
+    max-width: 90%;
+    font-size: 16px; }
+  .benefitsHeader h3 {
+    margin-bottom: -195px; } }
+@media screen and (max-width: 444px) {
+  .meetTeamContainer {
+    padding-bottom: 2em; }
+
+  .profile {
+    height: 250px; } }
+@media screen and (max-width: 427px) {
+  .meetTeamContainer p {
+    bottom: -150px; } }
+@media screen and (max-width: 434px) {
+  .benefitsHeader h3 {
+    margin-bottom: -170px; } }
+@media screen and (max-width: 398px) {
+  .profile {
+    height: 200px;
+    max-width: 70%; }
+
+  .overlay h1 {
+    font-size: 50px; } }
+@media screen and (max-width: 361px) {
+  .benefitsHeader h3 {
+    margin-bottom: -175px; }
+
+  .meetTeamContainer p {
+    bottom: -175px; }
+
+  .staffInfo {
+    margin-bottom: 12em; } }
+@media screen and (max-width: 359px) {
+  .benefitsHeader h3 {
+    margin-bottom: -150px; } }
+@media screen and (max-width: 328px) {
+  .meetTeamContainer p {
+    bottom: -200px; }
+
+  .staffInfo {
+    margin-bottom: 14em; } }
+@media screen and (max-width: 1199px) {
+  .appOverview {
+    max-width: 100%;
+    padding: 1em 0em; } }
+@media screen and (max-width: 991px) {
+  .appOverview {
+    flex-direction: column; }
+    .appOverview:hover {
+      background-color: inherit; }
+
+  .appFirstLine {
+    width: 100%;
+    margin-bottom: 0.5em;
+    background-color: #e4f6fe;
+    padding: .5em; }
+
+  .appSecondLine {
+    width: 100%;
+    padding: .5em; }
+
+  .adminVacOverview {
+    display: flex;
+    flex-direction: row;
+    padding: 1em 0em;
+    padding-left: 16px;
+    justify-content: space-between; }
+    .adminVacOverview:hover {
+      background-color: inherit; }
+
+  #submitEditVac, #submitNewVac {
+    margin-left: 15px; }
+
+  .blogOverviewAdmin:hover {
+    background-color: inherit; } }
+@media screen and (max-width: 568px) {
+  .appOverview {
+    padding: 1em; }
+
+  .appFirstLine {
+    width: 100%;
+    margin-bottom: 0.6em;
+    flex-direction: column;
+    margin-bottom: 0px;
+    background-color: white;
+    padding-left: 0px; }
+
+  .appSecondLine {
+    flex-direction: column;
+    width: 100%;
+    padding: 0px; }
+
+  .viewCv {
+    margin-top: 10px;
+    max-width: 40px; }
+
+  .rowTitle {
+    max-width: 100%; }
+
+  .adminVacOverview {
+    display: flex;
+    flex-direction: column;
+    max-width: 100%; }
+    .adminVacOverview:hover {
+      background-color: inherit; }
+
+  .btnRow {
+    width: 300px; }
+
+  .blogOverview, .blogOverviewHome {
+    max-width: 100% !important; } }
+@media screen and (max-width: 400px) {
+  .btnRow {
+    width: 100%; } }
+
+/*# sourceMappingURL=css.css.map */

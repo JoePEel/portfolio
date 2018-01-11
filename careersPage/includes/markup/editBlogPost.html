@@ -1,0 +1,17 @@
+<button class='backToBlogPost'>Back</button>
+<div class="blogPostContainer"></div>
+<form id="editBlogPost">
+<div class="row">
+    <div class="col-md-12 form-group">
+        <label for="blogTitle">Title</label>
+        <input type="text" name="blogTitle" id="blogTitle" required pattern="[A-Za-z\s]{3,100}">
+    </div>
+    <div class="col-md-12">
+        <label for="blogContent">Content</label>
+     <textarea name="blogContent" id="blogContent" rows="10" cols="30"></textarea><script>CKEDITOR.replace("blogContent");</script>
+    </div>
+    <div>
+        <button type="sumbit" id="editBlogBtn">Update Blog</button>
+    </div>
+</div>       
+</form>

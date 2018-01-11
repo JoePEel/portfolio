@@ -1,0 +1,17 @@
+<button class='backToVacsAdminBtn'>Back</button>
+<div id="" class="addVacContainer"></div>
+<form id="addVac">
+<div class="row">
+    <div class="col-md-12 form-group">
+        <label for="vacTitle">Title</label><br>
+        <input type="text" name="vacTitle" id="vacTitle" required pattern="[A-Za-z\s]{3,100}">
+    </div>
+    <div class="col-md-12">
+        <label for="vacContent">Content</label>
+     <textarea name="vacContent" id="vacContent" rows="10" cols="30"></textarea><script>CKEDITOR.replace("vacContent");</script>
+    </div>
+    <div>
+        <button type="sumbit" id="submitNewVac">Add Vacancy</button>
+    </div>
+</div>       
+</form>

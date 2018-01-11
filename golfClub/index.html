@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/animate.css" type="text/css">
+    <link rel="stylesheet" href="vegas/vegas.min.css">
+    <script src="https://use.fontawesome.com/fbaf04e7c5.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Lora:400,700|Montserrat" rel="stylesheet">
+    <link rel="stylesheet" href="css/css.css" type="text/css">
+  </head>
+  <body>
+<div id="application">    
+     
+<div class="topBarNav">
+    <div class="row">
+        <div class="col-4">
+        <nav class="nav justify-content-start" id="contactIcons">
+            <li><i class="fa fa-facebook-square  fa-2x" aria-hidden="true"></i></li>
+            <li><i class="fa fa-twitter fa-2x" aria-hidden="true"></i></li>
+            <li><i class="fa fa-instagram fa-2x" aria-hidden="true"></i></li>
+        </nav>
+        </div>
+        <div class="col-8">
+        <nav class="nav justify-content-end" id="socialIcons">
+            <li>01908 555 555<i class="fa fa-phone"></i></li>
+            <li id="topEmail">email@eamil.com<i class="fa fa-envelope-open"></i></li>
+        </nav>
+        </div>
+    </div>
+</div>
+      
+<div class="secondBarNav">
+    
+    <ul id="mobileNavBtns">
+    <a class="nav-link" href="#" @click.prevent="mobileNav = true">Menu</a>
+    <a class="nav-link" href="#" v-if="mobileNav == true" @click.prevent="mobileNav = false">Close</a>
+    </ul>
+    
+    <ul class="nav nav-justified" id="largeScreenNav">
+      <li class="nav-item">
+        <a class="nav-link active" href="#">Home</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#" data-toggle="modal" data-target="#bookModal" @click="calcDays">Book Tee</a>
+      </li>
+        <li class="nav-item">
+        <a class="nav-link" href="#">About</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" id="logo" href="#"><img src="img/logo.png"></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">Facilites</a>
+      </li>
+        <li class="nav-item">
+        <a class="nav-link" href="#">Pros</a>
+      </li>
+        <li class="nav-item">
+        <a class="nav-link" href="#">Contact</a>
+      </li>
+    </ul>
+    
+    <transition enter-active-class="animated slideInLeft" leave-active-class="animated slideOutLeft">
+    <ul class="nav nav-justified" id="mobileNav" v-if="mobileNav == true">
+      <li class="nav-item">
+        <a class="nav-link active" href="#">Home</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#" data-toggle="modal" data-target="#bookModal" @click="calcDays">Book Tee</a>
+      </li>
+        <li class="nav-item">
+        <a class="nav-link" href="#">About</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">Facilites</a>
+      </li>
+        <li class="nav-item">
+        <a class="nav-link" href="#">Pros</a>
+      </li>
+        <li class="nav-item">
+        <a class="nav-link" href="#">Contact</a>
+      </li>
+    </ul>
+    </transition>
+</div>
+
+   
+      
+<div id="slides">     
+</div>
+<div class="slidesBody">
+    <div class="slidesTitle">
+        <h1>Welcome to the golf club</h1>
+        <h5>18 holes of just golf, golf and more golf</h5>
+    </div>
+</div>
+
+
+     
+ <div class="aboutUs container">
+       
+    <p><span class="bigLetter">S</span>et in 80 acres of parkland...nNunc non nisi urna. Mauris eu sodales nulla, in luctus diam. Sed tincidunt facilisis libero, et cursus dui interdum et. Aenean tincidunt risus dolor, sed mattis metus pharetra quis. Nam efficitur semper neque, in volutpat turpis consequat in. Donec nec luctus neque, eget luctus elit. Praesent ex dolor, convallis sed venenatis non, porta in dolor. Curabitur et massa blandit, faucibus dolor sed, ultrices ligula. Proin aliquet eu enim vel sagittis.</p>      
+
+    <div class="buttons" id="mainButtonGroup">
+        <button class="btn" data-toggle="modal" data-target="#bookModal" @click="calcDays" >Book Tee Times</button>
+        <button class="btn" @click="courseGuideShow">Course Guide</button>
+        
+    </div>
+   
+ </div>       
+       
+<!-- Modal -->
+<div class="modal fade" id="bookModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Book a tee time <span v-if="stage == 'two'">for {{selectedDay}}</span><span v-if="stage == 'three' || stage == 'four'">for {{selectedDay}} @ {{selectedTime}}</span></h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+          
+          
+<transition appear enter-active-class="animated fadeInDown" leave-active-class="animated fadeOutUp">
+<div id="days" v-if="stage == 'one'">
+    <ul>
+        <li v-for="day in avDays">
+            <h5 @click="pickedDay(day)">{{ day }}</h5><br>
+        </li>
+    </ul>
+</div>
+</transition>
+      
+<transition enter-active-class="animated fadeInDown" leave-active-class="animated fadeOutUp">
+<div v-if="stage == 'two'">
+<button class="backBtn" @click="stage = 'one'">Back</button>
+<table class="table">
+  <thead>
+    <tr>
+      <th>Time</th>
+      <th>1 Ball</th>
+      <th>2 Ball</th>
+      <th>3 Ball</th>
+        <th>3 Ball</th>
+    </tr>
+  </thead>
+  <tbody @click="selectTime($event)">
+    <tr v-for="time in times">
+        <th scope="row">{{time}}</th>
+            <td>£20</td>
+            <td>£40</td>
+            <td>£60</td>
+            <td>£80</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+</transition>
+
+<transition enter-active-class="animated fadeInDown" leave-active-class="animated fadeOutUp">
+<div class="logInFormContainer" v-if="stage == 'three'">
+<button class="backBtn" @click="stage = 'two'">Back</button>
+<h4 id="onlyDemo">(Any data will do for the demo!)</h4>
+<form>
+  <div class="form-group" :class="{'has-danger' :userDanger}">
+    <label for="username">Username</label>
+    <input type="text" class="form-control" v-model="username" @keyup="userValidate" :class="{'form-control-warning' : userDanger}" id="username">
+    <div class="form-control-feedback" v-if="userDanger">{{ userMessage }}</div>
+  </div>
+  <div class="form-group" :class="{'has-danger' :passwordDanger}">
+    <label for="exampleInputPassword1">Password</label>
+    <input type="password" class="form-control" v-model="password" @keyup="passwordValidate" :class="{'form-control-warning' : passwordDanger}" id="exampleInputPassword1">
+    <div class="form-control-feedback" v-if="passwordDanger">{{ passwordMessage }}</div>
+  </div>
+    <button class="btn btn-outline-success" @click.prevent="validate">Book</button>
+</form>
+</div> 
+</transition>
+
+
+<div v-if="stage =='four'" id="ajaxLoader">
+    <img src="img/ajax-loader.gif">
+</div>
+
+
+<transition enter-active-class="animated fadeInDown" leave-active-class="animated fadeOutUp">
+<div v-if="stage == 'five'" id="finalMessage">
+    <h4>{{ username }} - Tee booked for {{ selectedTime }} on {{ selectedDay }}</h4>
+    <h4>See you soon!</h4>
+</div>
+</transition>
+
+<!-- End of Modal Content-->
+        </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal" @click="reset">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+  
+     
+<!--    Course Guide    -->
+    
+<transition enter-active-class="animated fadeInDown" leave-active-class="animated fadeOutUp">    
+<div class="container" v-if="courseGuide" id="courseGuideContainer">
+<button @click="courseGuideHide" id="closeButton">Close</button>
+    <transition enter-active-class="animated fadeInLeft" leave-active-class="animated fadeOutRight">
+    <div class="guideImg" v-if="animateImg">
+        <img :src="currentImg">
+    </div>
+    </transition>
+    <transition enter-active-class="animated fadeInRight" leave-active-class="animated fadeOutLeft">
+    <div id="holeDesc" v-if="animateDesc">
+        <p>{{ holeDesc }}</p>
+    </div>
+    </transition>
+    <div id="courseButtons">
+        <ul v-for="(value, key, index) in courseDetails" tag="li">
+            <li :id="key" :class="{activated : curImgId == key}" @click="changeHole(key, $event)">{{value}}</li>
+        </ul>
+    </div>
+    <div id="mobileCourseButtons">
+        <button @click="mobileChangeHole('prev')">Prev</button><h5>{{ curImgId + 1 }}</h5>
+        <button @click="mobileChangeHole('next')">Next</button><hr>
+    </div>
+</div>
+</transition>
+      
+    
+
+    
+    
+<div id="midSection">
+     
+<div class="container">
+    <div class="row" id="infoCards">
+        <div class="col-md-6">
+            <div class="card">
+              <img class="card-img-top" src="img/meetpros.jpg" alt="Card image cap">
+              <div class="card-block">
+                <h4 class="card-title">Meet the Pros</h4>
+                <p class="card-text">Curabitur gravida eros ut iaculis feugiat. Integer eget ultrices enim. Curabitur luctus congue tellus sed rutrum. Maecenas viverra porta odio id ultricies. Aenean ut leo consequat, fermentum ipsum eget, blandit ipsum. Morbi at velit cursus, volutpat ex id, gravida justo. Suspendisse ullamcorper sapien arcu, quis condimentum neque euismod sit amet.</p>
+                <button>Link</button>
+              </div>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="card">
+              <img class="card-img-top" src="img/drivingrange.jpg" alt="Card image cap">
+              <div class="card-block">
+                <h4 class="card-title">Facilities</h4>
+                <p class="card-text">Curabitur gravida eros ut iaculis feugiat. Integer eget ultrices enim. Curabitur luctus congue tellus sed rutrum. Maecenas viverra porta odio id ultricies. Aenean ut leo consequat, fermentum ipsum eget, blandit ipsum. Morbi at velit cursus, volutpat ex id, gravida justo. Suspendisse ullamcorper sapien arcu, quis condimentum neque euismod sit amet.</p>
+                <button>Link</button>
+              </div>
+            </div>
+        </div>
+    </div>  
+</div>     
+      
+<div id="newsSection">
+    <div class="container">
+        <h3>Latest News</h3>
+        <div class="row">
+            <div class="col-sm-4 newsItem newsItemBorder">
+                <h5>Some News</h5>
+                <p>Donec nec luctus neque, eget luctus elit. Praesent ex dolor, convallis sed venenatis non, porta in dolor....<span>[Read More]</span></p>
+            </div>
+            <div class="col-sm-4 newsItem newsItemBorder">
+                <h5>Some News</h5>
+                <p>Donec nec luctus neque, eget luctus elit. Praesent ex dolor, convallis sed venenatis non, porta in dolor....<span>[Read More]</span></p>
+            </div>
+            <div class="col-sm-4 newsItem">
+                <h5>Some News</h5>
+                <p>Donec nec luctus neque, eget luctus elit. Praesent ex dolor, convallis sed venenatis non, porta in dolor....<span>[Read More]</span></p>
+            </div>
+        </div>
+    </div>    
+</div>      
+      
+<!--    End of mid section-->
+</div>     
+      
+      
+<div id="footer">
+    <div class="container">
+        <p>Aenean tincidunt risus dolor, sed mattis metus pharetra quis. Nam efficitur semper neque, in volutpat turpis consequat in. Donec nec luctus neque, eget luctus elit. Praesent ex dolor, convallis sed venenatis non, porta in dolor. Curabitur et massa blandit, faucibus dolor sed, ultrices ligula. Proin aliquet eu enim vel sagittis.</p>
+    </div>
+</div>      
+      
+      
+  
+        
+</div>  
+<script
+  src="https://code.jquery.com/jquery-3.2.1.min.js"
+  integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+  crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
+    <script src="vue.js"></script>
+    <script src="vegas/vegas.min.js"></script>
+    <script src="app.js"></script>
+  </body>
+</html>

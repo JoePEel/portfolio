@@ -1,0 +1,59 @@
+.title {
+    width: 100%;
+    margin: 0 auto;
+    background-color: $colour-primary;
+    font-size: 1.6rem;
+    font-weight: 600;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    color: white;
+    
+    &__container {
+        width: 95%;
+        margin: 0 auto;
+        max-width: 120rem;
+    }
+    
+    &__ul {
+        list-style: none;
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-start;
+        margin-top: .5rem;
+        padding-left: 0px;
+    }
+    
+    &__brand {
+        font-size: 2.5rem;
+        margin-right: 6rem;
+    }
+    
+    &__menu-item {
+        margin-right: 4rem;
+        margin-top: 1rem;
+        
+        
+        &:hover {
+            color: $colour-action;
+            cursor: pointer;
+        }
+    }
+}
+
+@media screen and (max-width: 495px) {
+    .title {
+        
+        &__brand {
+            display: none;
+        }
+        
+        
+        &__ul {
+            margin-left: 1rem;
+        }
+    
+        
+    }
+    
+}

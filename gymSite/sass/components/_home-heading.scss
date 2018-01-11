@@ -1,0 +1,67 @@
+.home-heading{
+    
+    background-image: url("img/headline.jpg");
+    height: 40rem;
+    background-repeat: cover;
+    background-position: 50% 20%;
+    position: relative;
+    color: white;
+    max-width: 120rem;
+    margin: 0 auto;
+    
+    
+    &__overlay {
+        height: 100%;
+        width: 100%;
+        background-color: rgba(1, 1, 1, 0.4);
+        position: relative;
+    }
+    
+    &__container {
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+        margin-top: 10rem;
+        text-align: center;
+        
+        
+        h1 {
+            font-size: 4rem;
+            backface-visibility: hidden;
+        }
+    }
+    
+}
+
+@media screen and (max-width: 920px) {
+    
+    .home-heading {
+        
+        height: 30rem;
+     
+        &__container {
+            margin: 0 auto;
+            margin-top: 5rem;
+            width: 80%;
+        }
+        
+    }
+
+}
+
+@media screen and (max-width: 747px) {
+    
+    .home-heading {
+        
+        &__container {
+            margin: 0 auto;
+            margin-top: 5rem;
+            width: 90%;
+            
+            h1 {
+                font-size: 3rem;
+            }
+        }
+    }
+
+}

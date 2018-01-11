@@ -1,0 +1,68 @@
+.bttn {
+    
+    height: 4rem;
+    font-size: 1.6rem;
+    padding-right: 3rem;
+    padding-left: 3rem;
+    border: 0px;
+    border-radius: 10px;
+    font-weight: 600;
+    transition: all .15s ease;
+    
+    &-primary {
+        background-color: $colour-primary;
+        color: white;
+        
+        &:hover {
+            background-color: $colour-action;
+            color: $colour-primary;
+        }
+    }
+    
+    &-action {
+        background-color: $colour-action;
+        
+        &:hover {
+            background-color: $colour-primary;
+            color: $colour-action;
+        }
+        
+        &-wide {
+            width: 95%;
+            display: none;
+            margin: .3rem auto;
+            margin-left: 2.5%;
+        }
+    }
+    
+    &:hover {
+        cursor: pointer;
+        transform: translateY(-2px);
+        box-shadow: 5px 5px 15px -5px rgba(0,0,0,0.75);
+    }
+    
+    &:focus {
+        outline: 0px;
+    }
+    
+    &:active {
+        transform: translateY(-1px);
+        box-shadow: 5px 5px 12px -6px rgba(0,0,0,0.75);
+    }
+    
+    &-large {
+        height: 5rem;
+        font-size: 3rem;
+        padding-top: .2rem;
+        padding-bottom: 1rem;
+        padding-left: 5rem;
+        padding-right: 5rem;
+    }
+}
+
+
+@media screen and (max-width: 495px) {
+    .bttn-action-wide {
+        display: block;
+    }
+}

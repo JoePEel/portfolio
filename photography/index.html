@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
+      <link rel="stylesheet" href="css/normalize.css" type="text/css">
+      <link rel="stylesheet" href="css/style.css" type="text/css">
+  </head>
+  <body>
+
+ <nav class="navbar navbar-toggleable-md fixed-top navbar-light bg-faded">
+  <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <a class="navbar-brand">Phone Photography</a>
+  <div class="collapse navbar-collapse menu" id="navbarNavAltMarkup">
+    <div class="navbar-nav">
+      <a class="nav-item nav-link standard active">Standard</a>
+      <a class="nav-item nav-link details">Details</a>
+      <a class="nav-item nav-link thumbnails">Thumbnails</a>
+        <a class="nav-item nav-link" href="../index.php">Take me back to joepeel.co.uk</a>
+    </div>
+  </div>
+</nav>
+      
+<div class="container-fluid">   
+      
+    <div class="photosContainer">
+
+        <div class="row">  
+        <div class="photo photo1 light col-lg-4 col-md-6 animationElement ">   
+            <p class="photoCaption">Merrit Island, Florida</p>
+            <div class="overlay">
+            </div>          
+        </div>
+
+        <div class="photo photo2 light col-lg-4 col-md-6 animationElement">   
+            <p class="photoCaption">Lake Tohopekaliga, Florida</p>
+            <div class="overlay">
+            </div>          
+        </div>  
+
+
+        <div class="photo photo3 light col-lg-4 col-md-12 animationElement">   
+            <p class="photoCaption">Somewhere in Florida</p>
+            <div class="overlay">
+            </div>          
+        </div>  
+
+
+
+        <div class="photo photo4 light col-lg-4 col-md-6 animationElement">   
+            <p class="photoCaption">The Lake District</p>
+            <div class="overlay">
+            </div>          
+        </div>
+
+        <div class="photo photo5 light col-lg-4 col-md-6 animationElement">
+            <p class="photoCaption">Amsterdamn</p>
+            <div class="overlay">
+            </div>          
+        </div>  
+
+        <div class="photo photo6 light col-lg-4 col-md-12 animationElement">   
+            <p class="photoCaption">Birmingham</p>
+            <div class="overlay">
+            </div>          
+        </div>  
+
+        <div class="photo photo7 light col-lg-4 col-md-6 animationElement">   
+            <p class="photoCaption">The North Sea</p>
+            <div class="overlay">
+            </div>          
+        </div>
+
+        <div class="photo photo8 light col-lg-4 col-md-6 animationElement">   
+            <p class="photoCaption">The Gulf of Mexico</p>
+            <div class="overlay">
+            </div>          
+        </div>  
+
+        <div class="photo photo9 light col-lg-4 col-md-12 animationElement">  
+            <p class="photoCaption">Olden, Norway</p>
+            <div class="overlay">
+            </div>          
+        </div>  
+     
+      </div>  
+</div>
+<!--End of photosContainer div-->
+         
+      
+      <!--Lightbox      -->
+<div class="screenOverlay">
+  <div class="lightboxImg">
+  </div>
+    <p class="lightboxText"></p>
+</div>       
+  
+
+      
+<script
+  src="https://code.jquery.com/jquery-3.2.1.js"
+  integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE="
+  crossorigin="anonymous"></script>      
+      
+      
+<script>
+
+//clear col classes and other view specific classes
+var removeColClasses = function(){
+    $(".photo").removeClass("col-sm-4");
+    $(".photo").removeClass("col-lg-4");
+    $(".photo").removeClass("col-md-4");
+    $(".photo").removeClass("col-md-6");
+    $(".photo").removeClass("col-md-12");
+    $(".photo").removeClass("col-sm-3");
+     $(".photo").removeClass("col-sm-3");
+     $(".photo").removeClass("col-md-3");
+    $(".photo").removeClass("col-6");
+     $(".photoCaption").removeClass("photoCaptionDetails");
+    $(".photo").removeClass("padding1");
+    $(".photo").removeClass("padding2");
+     $(".photo").removeClass("overlay2");
+    $(".overlayDiv").addClass("overlay");
+    $(".photo").css("margin-top", "0px");
+}
+    
+//change to active function
+var addActive = function(target){
+    $(".nav-item").removeClass("active");
+    $(target).addClass("active");
+}
+
+
+
+    
+//Change to Details view
+$(".details").on("click", function(){
+    //remove col classes
+    removeColClasses();
+    $(".photo").addClass("col-md-6");
+     $(".photo").addClass("padding1");
+    $(".photoCaption").addClass("photoCaptionDetails");
+    $(".photo").css("min-height", "400px");
+    
+    addActive(this);
+});
+    
+
+
+//Change to Standard view
+$(".standard").on("click", function(){
+    removeColClasses();
+    // Add col classes
+    $(".photo").addClass("col-lg-4");
+    $(".photo:nth-child(3n+1)").addClass("col-md-6");
+    $(".photo:nth-child(3n+2)").addClass("col-md-6");
+    $(".photo:nth-child(3n+3)").addClass("col-md-12");
+    //reset photo height
+    $(".photo").css("min-height", "400px");
+    
+    addActive(this);
+});
+    
+    
+    //Change to thumbnails view
+$(".thumbnails").on("click", function(){
+    
+    //Remove all previous column classses
+    removeColClasses();
+    //Add new column class
+    $(".photo").addClass("col-md-3");
+    $(".photo").addClass("col-sm-4");
+    $(".photo").addClass("col-6");
+    //Add remove padding class;
+    $(".photo").addClass("padding2");
+    // Adjust overlay height
+    $(".photo").css("min-height", "200px");
+    //Add margin
+    $(".photo").css("margin-top", "20px");
+    
+    //Change menu item to selected
+   addActive(this);
+});
+    
+     
+ //lightbox show   
+$(".light").on("click", function(){
+   $(".screenOverlay").css("display", "block");
+    var $img = $(this).css("backgroundImage");
+//    console.log($img);
+    var $text = $(this).children(".photoCaption").text();
+    console.log($text);
+    $(".lightboxImg").css("backgroundImage", $img);
+    $(".lightboxText").text($text);
+});
+    
+    
+//lightbox hide;    
+$(".screenOverlay").on("click", function(){
+   $(this).css("display", "none");
+});
+    
+    
+
+//Overlay on hover    
+// $(".photoCaption").hide();   
+// $(".overlay").on("mouseenter", function(){
+//     $(this).siblings(".photoCaption").fadeIn();
+// });
+//     $(".overlay").on("mouseleave", function(){
+//     $(this).siblings(".photoCaption").fadeOut();
+// });   
+//    
+    
+
+    
+// Slide elements into view when in view.
+var $animationElements = $(".animationElement");
+var $window = $(window);
+
+function check_if_in_view() {
+  var windowHeight = $window.height();
+  var windowTop = $window.scrollTop();
+  var windowBottom = (windowTop + windowHeight);
+ 
+  $.each($animationElements, function() {
+    var $element = $(this);
+    var elementHeight = $element.outerHeight();
+    var elementTop = $element.offset().top;
+    var elementBottom = (elementTop + elementHeight);
+ 
+    //check to see if within view
+    if ((elementBottom >= windowTop) && (elementTop <= windowBottom)) {
+      $element.addClass("inView");
+    } 
+  });
+}
+
+$window.on("scroll resize", check_if_in_view);
+$window.trigger('scroll');
+
+
+
+
+
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
+  </body>
+</html>

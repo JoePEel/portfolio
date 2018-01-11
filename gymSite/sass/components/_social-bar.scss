@@ -1,0 +1,32 @@
+.social-bar {
+    
+    ul {
+        margin: 0 auto;
+        list-style: none;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        padding-left: 0;
+    }
+    
+    i {
+        font-size: 4rem;
+        margin: 1rem 3rem;
+        color: $colour-action;
+        
+        &:hover {
+            cursor: pointer;
+        }
+    }
+    
+}
+
+@media screen and (max-width: 575px) {
+    
+    .social-bar {
+    
+    i {
+        margin: 1rem 1.5rem;
+    }
+    }
+}
